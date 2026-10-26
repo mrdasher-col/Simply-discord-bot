@@ -20,8 +20,8 @@ from discord.ext import commands
 # CONFIGURACIÓN
 # ============================================================
 
-PREFIX = "$"
-TOKEN = "UR TOKEN"
+PREFIX = "/"
+TOKEN = "................."
 
 FFMPEG_EXECUTABLE = os.getenv(
     "FFMPEG_EXECUTABLE",
@@ -577,10 +577,24 @@ async def gen_pasw(ctx: commands.Context):
 
 
 
+## RNG GAMBLING!!
 
 
 
+def rng():
+    rng_decidir = random.choices(
+        ["Comun 🥚 80%", "Raro 🌀15%", "EEEpico 🦕 4%", "🍭 Legendario 1%" , "🫆  imposible 0.5%" , "👀  Haker detectado 0.3%" , "😭 admin 0.02%" , ":fire:  0.0000001% DesemPLEADOOOOOOOO"],
+        weights=[80, 15, 4, 1, 0.5, 0.3, 0.02, 0.00001],
+        k=1
+    )
+    return rng_decidir[0]
 
+
+
+@bot.command('rng')
+async def rng_command(ctx):
+    result = rng()
+    await ctx.send(f"🎲 Has obtenido un item **{result}**!")
 
 
 
